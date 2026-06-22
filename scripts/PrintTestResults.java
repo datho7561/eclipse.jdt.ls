@@ -41,9 +41,7 @@ public class PrintTestResults {
 
 			Map<String, TestCase> headResult = new HashMap<>();
 
-			try (DirectoryStream<Path> dirStream = Files.newDirectoryStream(
-					Paths.get("").resolve("org.eclipse.jdt.ls.tests").resolve("target").resolve("surefire-reports"),
-					"*.xml")) {
+			try (DirectoryStream<Path> dirStream = Files.newDirectoryStream(Paths.get(""), "**/target/surefire-reports/*.xml")) {
 				dirStream.forEach(path -> {
 					try {
 						TestSuite testSuiteResult = (TestSuite) unmarshaller.unmarshal(path.toFile());

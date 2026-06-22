@@ -113,6 +113,11 @@ public class SyntaxServerTest extends AbstractSyntaxProjectsManagerBasedTest {
 			cu.discardWorkingCopy();
 		}
 	}
+	
+	@Test
+	public void testDoesFail() {
+		assertTrue(false, ">:]");
+	}
 
 	@Test
 	public void testDidOpen() throws Exception {
